@@ -35,11 +35,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/python-ci-lab
+          images: madhesh1171/python-ci-lab
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha,prefix=sha-,format=short
-            type=ref,event=tag
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
